@@ -141,7 +141,7 @@ if defined?(::Rails::Railtie) && defined?(ActionView)
       # total_pages - page > right
       assert_false Kaminari::Helpers::Paginator::PageProxy.new({total_pages: 10, right: 3}, 6, nil).right_outer?
       # total_pages - page == right
-      assert_false Kaminari::Helpers::Paginator::PageProxy.new({total_pages: 10, right: 3}, 7, nil).right_outer?
+      assert_true Kaminari::Helpers::Paginator::PageProxy.new({total_pages: 10, right: 3}, 7, nil).right_outer?
       # total_pages - page < right
       assert_true Kaminari::Helpers::Paginator::PageProxy.new({total_pages: 10, right: 3}, 8, nil).right_outer?
     end

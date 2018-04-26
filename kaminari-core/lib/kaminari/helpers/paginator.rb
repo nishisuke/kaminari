@@ -136,7 +136,7 @@ module Kaminari
 
         # within the right outer window or not
         def right_outer?
-          @options[:total_pages] - @page < @options[:right]
+          @options[:total_pages] - @page <= @options[:right]
         end
 
         # inside the inner window or not
